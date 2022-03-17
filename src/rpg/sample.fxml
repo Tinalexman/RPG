@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #202020" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rpg.Controller">
+   <AnchorPane fx:id="settingsPane" prefHeight="600.0" prefWidth="600.0">
+      <children>
+         <ImageView fitHeight="600.0" fitWidth="600.0">
+            <image>
+               <Image url="@background.jpg" />
+            </image>
+         </ImageView>
+         <Label focusTraversable="false" layoutX="33.0" layoutY="28.0" text="Settings" textFill="WHITE" underline="true">
+            <font>
+               <Font name="Symbol" size="32.0" />
+            </font>
+         </Label>
+         <Label focusTraversable="false" layoutX="33.0" layoutY="166.0" text="Sound" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="24.0" />
+            </font>
+         </Label>
+         <Button fx:id="settingsBackBtn" focusTraversable="false" layoutX="395.0" layoutY="492.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #00000000; -fx-border-color: #FFB74D; -fx-border-width: 2;" text="Back" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Button>
+         <Slider focusTraversable="false" layoutX="138.0" layoutY="177.0" prefHeight="14.0" prefWidth="172.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="30.0" />
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="shopPane" onKeyTyped="#interact" prefHeight="600.0" prefWidth="600.0">
+      <children>
+         <ImageView fitHeight="600.0" fitWidth="600.0">
+            <image>
+               <Image url="@background.jpg" />
+            </image>
+         </ImageView>
+         <Label focusTraversable="false" layoutX="33.0" layoutY="28.0" text="Shop" textFill="WHITE" underline="true">
+            <font>
+               <Font name="Symbol" size="32.0" />
+            </font>
+         </Label>
+         <Button fx:id="startGameBtn" focusTraversable="false" layoutX="424.0" layoutY="516.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 5; -fx-background-color: #00000000; -fx-text-fill: #FFFFFF; -fx-border-color: #FFB74D; -fx-border-width: 2.0;" text="Start Game">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <AnchorPane layoutX="100.0" layoutY="223.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" style="-fx-border-color: #FFB74D; -fx-border-width: 2; -fx-background-color: rgba(0, 0, 0, 0.4); -fx-border-radius: 3;">
+            <children>
+               <Label fx:id="currentWeaponName" focusTraversable="false" layoutX="142.0" layoutY="3.0" text="Weapon" textFill="WHITE" underline="true">
+                  <font>
+                     <Font name="Symbol" size="32.0" />
+                  </font>
+               </Label>
+               <Label focusTraversable="false" layoutX="10.0" layoutY="80.0" text="Weapon Price:" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label focusTraversable="false" layoutX="10.0" layoutY="110.0" text="Weapon Damage:" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label focusTraversable="false" layoutX="10.0" layoutY="140.0" text="Weapon Speed:" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label fx:id="weaponPriceLabel" focusTraversable="false" layoutX="110.0" layoutY="80.0" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Label>
+               <Label fx:id="weaponDamageLabel" focusTraversable="false" layoutX="130.0" layoutY="110.0" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Label>
+               <Label fx:id="weaponSpeedLabel" focusTraversable="false" layoutX="120.0" layoutY="140.0" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Label>
+               <Label fx:id="weaponTypeLabel" focusTraversable="false" layoutX="155.0" layoutY="50.0" text="Weapon Type" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Button fx:id="buyWeaponBtn" focusTraversable="false" layoutX="220.0" layoutY="190.0" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 5; -fx-background-color: #00000000; -fx-text-fill: #FFFFFF; -fx-border-color: #FFB74D; -fx-border-width: 2.0;" text="Buy Weapon">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Button>
+               <Label focusTraversable="false" layoutX="10.0" layoutY="200.0" text="Player Gold:" textFill="WHITE">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <Label fx:id="shopPlayerGoldLabel" focusTraversable="false" layoutX="95.0" layoutY="200.0" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+               </Label>
+            </children>
+         </AnchorPane>
+         <ImageView fx:id="leftArrow" fitHeight="50.0" fitWidth="50.0" layoutX="33.0" layoutY="323.0" pickOnBounds="true" rotate="90.0">
+            <image>
+               <Image url="@white_arrow.png" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="rightArrow" fitHeight="50.0" fitWidth="50.0" layoutX="511.0" layoutY="323.0" pickOnBounds="true" rotate="-90.0">
+            <image>
+               <Image url="@white_arrow.png" />
+            </image>
+         </ImageView>
+         <AnchorPane layoutX="100.0" layoutY="80.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="400.0" style="-fx-background-color: rgba(0, 0, 0, 0.4); -fx-border-color: #FFB74D; -fx-border-width: 2; -fx-border-radius: 3;">
+            <children>
+               <Label fx:id="shopNameInfo" layoutX="5.0" layoutY="5.0" text="What would you like to purchase, " textFill="WHITE">
+                  <font>
+                     <Font name="Symbol" size="12.0" />
+                  </font>
+               </Label>
+               <Label layoutX="5.0" layoutY="25.0" text="Hint: Get an attack weapon and a defense weapon" textFill="WHITE">
+                  <font>
+                     <Font name="Symbol" size="12.0" />
+                  </font>
+               </Label>
+            </children>
+         </AnchorPane>
+      </children>
+   </AnchorPane>
+
+    <AnchorPane fx:id="newGamePane" prefHeight="600.0" prefWidth="600.0">
+        <ImageView fitHeight="600.0" fitWidth="600.0">
+            <Image url="@background.jpg" />
+        </ImageView>
+      <Label focusTraversable="false" layoutX="30.0" layoutY="20.0" text="Create Player" textFill="WHITE" underline="true">
+         <font>
+            <Font name="Symbol" size="28.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="50.0" layoutY="150.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" style="-fx-border-color: #FFB74D; -fx-border-width: 2; -fx-background-color: rgba(0, 0, 0, 0.4); -fx-border-radius: 3;">
+         <children>
+            <TextField fx:id="playerNameField" focusTraversable="false" layoutX="99.0" layoutY="29.0" prefHeight="27.0" prefWidth="180.0" style="-fx-background-color: rgba(0, 0, 0, 0.4); -fx-border-color: #FFB74D; -fx-text-fill: #FFFFFF; -fx-border-radius: 3;">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </TextField>
+            <Label focusTraversable="false" layoutX="26.0" layoutY="32.0" text="Name:" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="newGameProceedBtn" focusTraversable="false" layoutX="380.0" layoutY="340.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" style="-fx-border-color: #FFB74D; -fx-background-color: rgba(0, 0, 0, 0.4); -fx-border-radius: 3;" text="Proceed" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="newGameCancelBtn" focusTraversable="false" layoutX="250.0" layoutY="340.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" style="-fx-border-color: #FFB74D; -fx-background-color: rgba(0, 0, 0, 0.4); -fx-border-radius: 3;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+    </AnchorPane>
+   <AnchorPane fx:id="gamePane" onKeyPressed="#interact" onKeyTyped="#interact" prefHeight="600.0" prefWidth="600.0">
+      <children>
+         <ImageView fitHeight="600.0" fitWidth="600.0">
+            <image>
+               <Image url="@background.jpg" />
+            </image>
+         </ImageView>
+         <TextArea fx:id="messageArea" editable="false" focusTraversable="false" layoutX="10.0" layoutY="10.0" onKeyPressed="#interact" onKeyTyped="#interact" prefHeight="480.0" prefWidth="580.0" styleClass="textarea" wrapText="true">
+            <font>
+               <Font name="Symbol" size="14.0" />
+            </font>
+         </TextArea>
+         <VBox layoutX="10.0" layoutY="490.0" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#interact" onKeyTyped="#interact" prefHeight="100.0" prefWidth="580.0" spacing="5.0" style="-fx-background-color: rgba(0, 0, 0, 0.4);">
+            <children>
+               <Button fx:id="optionOneBtn" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="580.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);" textFill="WHITE">
+                  <font>
+                     <Font name="Symbol" size="12.0" />
+                  </font></Button>
+               <Button fx:id="optionTwoBtn" focusTraversable="false" layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="580.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);" textFill="WHITE">
+                  <font>
+                     <Font name="Symbol" size="12.0" />
+                  </font>
+               </Button>
+               <Button fx:id="optionThreeBtn" focusTraversable="false" layoutX="10.0" layoutY="45.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="580.0" style="-fx-background-color: rgba(0, 0, 0, 0.2);" textFill="WHITE">
+                  <font>
+                     <Font name="Symbol" size="12.0" />
+                  </font>
+               </Button>
+            </children>
+         </VBox>
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="inventoryPane" layoutX="150.0" layoutY="175.0" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#interact" prefHeight="250.0" prefWidth="300.0" style="-fx-border-color: #FFB74D; -fx-border-width: 2; -fx-background-color: rgba(0, 0, 0, 0.4); -fx-border-radius: 3;">
+      <children>
+         <Label focusTraversable="false" layoutX="80.0" text="Inventory" textFill="WHITE" underline="true">
+            <font>
+               <Font name="Symbol" size="32.0" />
+            </font>
+         </Label>
+         <Label focusTraversable="false" layoutX="26.0" layoutY="130.0" text="Muscle:" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label focusTraversable="false" layoutX="26.0" layoutY="160.0" text="Brains:" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label focusTraversable="false" layoutX="26.0" layoutY="190.0" text="Charm:" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label focusTraversable="false" layoutX="26.0" layoutY="220.0" text="Gold:" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label focusTraversable="false" layoutX="26.0" layoutY="100.0" text="Health:" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label focusTraversable="false" layoutX="26.0" layoutY="70.0" text="Resistance:" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="inventoryHealth" focusTraversable="false" layoutX="110.0" layoutY="95.0" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="inventoryMuscle" focusTraversable="false" layoutX="110.0" layoutY="130.0" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="inventoryBrains" focusTraversable="false" layoutX="110.0" layoutY="160.0" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="inventoryCharm" focusTraversable="false" layoutX="110.0" layoutY="190.0" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="inventoryGold" focusTraversable="false" layoutX="110.0" layoutY="220.0" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="inventoryName" alignment="CENTER" focusTraversable="false" layoutY="50.0" prefHeight="20.0" prefWidth="300.0" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="14.0" />
+            </font>
+         </Label>
+         <Label fx:id="inventoryResistance" focusTraversable="false" layoutX="110.0" layoutY="70.0" textFill="WHITE">
+            <font>
+               <Font name="System Italic" size="16.0" />
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
+
+   <AnchorPane fx:id="menuPane" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #BDBDBD;">
+      <ImageView fitHeight="600.0" fitWidth="600.0">
+         <Image url="@background.jpg" />
+      </ImageView>
+      <Label layoutX="45.0" layoutY="10.0" prefHeight="17.0" prefWidth="162.0" text="Wars" textFill="WHITE">
+         <font>
+            <Font name="Symbol" size="72.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="100.0" style="-fx-text-fill: #FFFFFF;" text="A simple RPG game">
+         <font>
+            <Font name="Candara Italic" size="14.0" />
+         </font>
+      </Label>
+
+      <VBox layoutX="420.0" layoutY="385.0" spacing="10.0">
+         <Button fx:id="newGameBtn" focusTraversable="false" onMouseEntered="#animateButton" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 5; -fx-background-color: #00000000; -fx-text-fill: #FFFFFF; -fx-border-color: #FFB74D; -fx-border-width: 2.0;" text="New Game">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="continueBtn" disable="true" focusTraversable="false" layoutX="10.0" layoutY="10.0" onMouseEntered="#animateButton" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 5; -fx-background-color: #00000000; -fx-text-fill: #FFFFFF; -fx-border-color: #FFB74D; -fx-border-width: 2.0;" text="Continue">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <Button fx:id="settingBtn" focusTraversable="false" onMouseEntered="#animateButton" prefHeight="40.0" prefWidth="150.0" style="-fx-border-radius: 5; -fx-background-color: #00000000; -fx-text-fill: #FFFFFF; -fx-border-color: #FFB74D; -fx-border-width: 2.0;" text="Settings">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
+         <Button focusTraversable="false" graphicTextGap="20.0" onMouseClicked="#quitGame" onMouseEntered="#animateButton" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 5; -fx-background-color: #FFB74D; -fx-text-fill: #FFFFFF;" text="Quit">
+            <graphic>
+               <ImageView fitHeight="35.0" fitWidth="35.0">
+                  <Image url="@quit.png" />
+               </ImageView>
+            </graphic>
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+      </VBox>
+   </AnchorPane>
+
+</AnchorPane>
